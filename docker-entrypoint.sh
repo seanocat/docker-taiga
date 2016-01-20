@@ -36,12 +36,17 @@ if [ ! -z "$RABBIT_PORT_5672_TCP_ADDR" ]; then
   sed -i "s/eventsUrl\": null/eventsUrl\": \"ws:\/\/$TAIGA_HOSTNAME\/events\"/g" /taiga/conf.json
 fi
 
+# Handle enabling taiga-events (for both secure & non-secure access).
+# For secure access case, SSL terminated reverse proxy setup is assumed.
+if [ "$TAIGA_EVENTS" = "True" ]; then
+  cp /etc/nginx/taiga-events.conf /etc/nginx/conf.d/default.conf
+fi
+
 # Handle enabling SSL
 if [ "$TAIGA_SSL" = "True" ]; then
   echo "Enabling SSL support!"
   sed -i "s/http:\/\//https:\/\//g" /taiga/conf.json
   sed -i "s/ws:\/\//wss:\/\//g" /taiga/conf.json
-  mv /etc/nginx/ssl.conf /etc/nginx/conf.d/default.conf
 fi
 
 # Start nginx service (need to start it as background process)

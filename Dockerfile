@@ -1,5 +1,5 @@
 FROM python:3.4
-MAINTAINER Benjamin Hutchins <ben@hutchins.co>
+MAINTAINER seanocat <seanocat@gmail.com>
 
 # Install nginx
 ENV NGINX_VERSION 1.9.7-1~jessie

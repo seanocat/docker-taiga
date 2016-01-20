@@ -4,7 +4,15 @@ Taiga is a project management platform for startups and agile developers & desig
 
 > [taiga.io](https://taiga.io)
 
+# About this image
+
+This image is a slightly modified version from [benhutchins/docker-taiga](https://github.com/benhutchins/docker-taiga) in order to support taiga-events in SSL terminated reverse proxy environment.
+
 # How to use this image
+
+There is also an updated version of example project at [seanocat/docker-taiga-example](https://github.com/seanocat/docker-taiga-example).
+
+# Original README.md from [benhutchins/docker-taiga](https://github.com/benhutchins/docker-taiga)
 
 There is an example project available at [benhutchins/docker-taiga-example](https://github.com/benhutchins/docker-taiga-example) that provides base configuration files available for you to modify and allows you to easily install plugins. I recommend you clone this repo and modify the files, then use it's provided scripts to get started quickly.
 
