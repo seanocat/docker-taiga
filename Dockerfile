@@ -34,7 +34,7 @@ RUN mkdir -p /taiga
 COPY conf/taiga/local.py /taiga/local.py
 COPY conf/taiga/conf.json /taiga/conf.json
 RUN ln -s /taiga/local.py /usr/src/taiga-back/settings/local.py
-RUN ln -s /taiga/conf.json /usr/src/taiga-front-dist/dist/js/conf.json
+RUN ln -s /taiga/conf.json /usr/src/taiga-front-dist/dist/conf.json
 
 WORKDIR /usr/src/taiga-back
 
